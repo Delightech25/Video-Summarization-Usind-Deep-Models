@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Summarization</title>
+</head>
+<body>
+    <h2>Upload Video for Summarization</h2>
+
+    <form action="/summarize" method="POST" enctype="multipart/form-data">
+        <input type="file" name="video" required>
+        <button type="submit">Summarize</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <p style="color:red;">{{ messages[0] }}</p>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summary Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Video AI</h2>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+
+    <div class="card">
+        <h2>Original Video</h2>
+
+        <div class="video-container">
+            <video width="500" controls>
+                <source src="{{ url_for('static', filename='uploads/' + original_video) }}" type="video/mp4">
+            </video>
+        </div>
+
+        <h2>Text Summary</h2>
+
+        <div class="summary-box">
+            {{ text_summary }}
+        </div>
+
+        <br>
+        <a href="/dashboard">⬅ Back to Dashboard</a>
+    </div>
+
+</div>
+
+</body>
+</html>
